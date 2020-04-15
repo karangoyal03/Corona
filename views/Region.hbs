@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+
+    <title>Region</title>
+    <style>
+        #head {
+            color: white;
+        }
+
+        .img {
+            height: 100%;
+            width: 100px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #head:hover {
+            transform: scale(1.2);
+            color: chartreuse;
+
+        }
+
+        body {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar  navbar-expand-sm bg-dark navbar-dark">
+
+
+        <div>
+            <img src="corona.jpg" class="img">
+        </div>
+        <ul class="navbar-nav mx-auto ">
+
+            <li class="nav-item mx-auto" style="width: 50px;"><a class="nav-link" href="/"><i
+                        class="fa fa-home"></i></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+            {{!-- <li class="nav-item"><a class="nav-link" href="/region">Region</a></li> --}}
+            <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+            <li class="nav-item"><a class="nav-link" href="/precautions">Precautions</a></li>
+
+        </ul>
+
+        <h1 id='head' class="mx-auto" style="width: 500px;">
+            REGION
+        </h1>
+
+        <div>
+            <h1 style="color: chocolate;
+                        float: right;">
+                CORONA
+            </h1>
+
+        </div>
+
+
+    </nav>
+
+    <div class="row">
+        <div class="col-sm-12" style="background-color: burlywood;margin-top:50px;">
+            <h1 class="display-2" style="color: indigo;text-align:center;">
+                <b>CORONA CASES</b>
+            </h1>
+        </div>
+
+    </div>
+
+
+    <div class="input-group mb-3" style=" width:60%;margin:auto;margin-top: 60px;">
+        <input id="inp" type="text" class="form-control" placeholder="Country name" aria-label="Recipient's username"
+            aria-describedby="button-addon2" style="background-color: rgb(139, 245, 210);text-align:center;">
+        <div class="input-group-append">
+            <button class="btn btn-outline-warning" type="button" onclick="doingrequest()">
+                Search</button>
+        </div>
+    </div>
+
+    <h2 class="display-2" style="text-align: center;margin-top:50px;color:white">
+        Country : <span style="color:#8ACA2B;" id="countryname">--</span>
+    </h2>
+
+    <div class="row" style="margin-top: 100px;">
+        <div class="card " style="margin-left:100px;margin-top:50px;width:20rem;height:fit-content">
+            <img src="https://media.giphy.com/media/UUsOy6IWmzw6mmeOpQ/giphy.gif" class="card-img-top" alt="corona img"
+                style="width: 318px;height:178px;">
+            <div class="card-body">
+
+                <h1 class="card-text " style="text-align: center;">Active Cases</h1>
+
+                <h1 class="display-3" style="color: grey;text-align:center;margin-bottom:0px;" id="active">--</h1>
+            </div>
+        </div>
+        <div class="card " style="margin-left:100px;margin-top:50px;width:20rem;height:fit-content">
+            <img src="https://media.giphy.com/media/dVuyBgq2z5gVBkFtDc/giphy.gif " class="card-img-top" alt="corona img"
+                style="width: 318px;">
+            <div class="card-body">
+
+                <h1 class="card-text " style="text-align: center;">DEATHS</h1>
+
+                <h1 class="display-3" style="color: black;text-align:center;margin-bottom:0px;" id="death">--</h1>
+            </div>
+        </div>
+        <div class="card " style="margin-left:100px;margin-top:50px;width:20rem;height:fit-content">
+            <img src="corona.jpg" class="card-img-top" alt="corona img" style="width: 318px;">
+            <div class="card-body">
+
+                <h1 class="card-text " style="text-align: center;">Recovered</h1>
+
+                <h1 class="display-3" style="color: #8ACA2B;;text-align:center;margin-bottom:0px;" id="recovery">--</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container" style="margin-top: 100px;background-color:white;">
+        <canvas id="activecaseschart"></canvas>
+    </div>
+    <div class="container" style="margin-top: 100px;background-color:white;">
+        <canvas id="deathcaseschart"></canvas>
+    </div>
+
+    <div class="container" style="margin-top:100px;margin-bottom:30px;background-color:white;">
+        <canvas id="recoveredcaseschart"></canvas>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>About</title>
+    <style>
+        #head {
+            color: white;
+        }
+
+        .img {
+            height: 100%;
+            width: 100px;
+            margin: 0;
+            padding: 0;
+        }
+
+        #head:hover {
+            transform: scale(1.2);
+            color: chartreuse;
+
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .blinking {
+            animation: blinkingText 1.2s infinite;
+        }
+
+        @keyframes blinkingText {
+            0% {
+                color: red;
+            }
+
+            49% {
+                color: red;
+
+            }
+
+            60% {
+                color: transparent;
+            }
+
+            99% {
+                color: transparent;
+            }
+
+            100% {
+                color: red;
+
+            }
+        }
+
+        .hvr-grow {
+            display: inline-block;
+            vertical-align: middle;
+            transform: translateZ(0);
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+            backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+            transition-duration: 0.3s;
+            transition-property: transform;
+        }
+
+        .hvr-grow:hover,
+        .hvr-grow:focus,
+        .hvr-grow:active {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar  navbar-expand-sm bg-dark navbar-dark">
+
+
+        <div>
+            <img src="corona.jpg" class="img">
+        </div>
+
+
+
+        <ul class="navbar-nav mx-auto ">
+
+            <li class="nav-item mx-auto" style="width: 50px;"><a class="nav-link" href="/"><i
+                        class="fa fa-home"></i></a>
+            </li>
+            {{!-- <li class="nav-item"><a class="nav-link" href="/about">About</a></li> --}}
+            <li class="nav-item"><a class="nav-link" href="/region">Region</a></li>
+            <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+            <li class="nav-item"><a class="nav-link" href="/precautions">Precautions</a></li>
+
+        </ul>
+
+        <h1 id='head' class="mx-auto" style="width: 500px;">
+            ABOUT
+
+        </h1>
+
+        <div>
+            <h1 style="color: chocolate;
+                            float: right;">
+                CORONA
+            </h1>
+
+        </div>
+
+
+    </nav>
+
+    <div>
+        <h1 class="display-1"
+            style="text-align: center;color:red;margin-top:100px;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+            <span class="blinking">COVID-19 ALERT</span>
+
+
+        </h1>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" style="background-color: #B0E0E6;text-align:center;height:fit-content;margin-top:70px;">
+            <h1 class="display-3">
+                HELPLINE
+            </h1>
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom: 20px;">
+        <div class="col-sm-8"
+            style="text-align:center;background-color:pink;margin-top: 100px;text-align:center;margin-left:200px;">
+            <h2 class="display-3" style="margin-top: 30px;">
+                <b>YOU ARE JUST ONE 📞 AWAY</b>
+            </h2>
+
+
+
+            <div class="hvr-grow"
+                style="width:250px;height:300px;background-color:rgb(201, 231, 236);border-radius:3px;margin-top:70px;">
+                <br>
+                <br>
+                <h3 style="text-align: center;font-weight:bolder;padding:auto;s">
+                    Govt Of <span style="color:darkorange;">I N</span><span style="color:white"> D </span><span
+                        style="color: green;">I A</span>
+                </h3>
+                <br>
+
+                <br>
+                <br>
+                <br>
+                <br>
+                
+
+                <h4>
+                    <b>011-23978046 or 1075</b>
+                </h4>
+
+            </div>
+
+            <div class="hvr-grow"
+                style="width:250px;height:300px;background-color:rgb(201, 231, 236);border-radius:3px;margin-top:70px;">
+                <br>
+                <br>
+                <h3 style="text-align: center;font-weight:bolder;padding:auto;">
+                    Ministry of Health <br> and Family Welfare
+                </h3>
+                <br>
+            
+                <br>
+            
+                <h4>
+                    <b>+91-11-23978046</b>
+                </h4>
+            
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
