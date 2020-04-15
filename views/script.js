@@ -35,6 +35,7 @@
          makingbarchart(countryarray);
          makinglinearchart(countryarray);
          makingbarchartforrecovery(countryarray);
+         document.getElementById('inp').value="";
        });
         
 
@@ -56,33 +57,32 @@
 
 
        let active = new Chart(chart, {
-        type: "bar",
-        data: {
-          labels: [...datearray],
-          datasets: [
-            {
-              label: "Cases Per day",
-              data: [...activecasesarray],
-              backgroundColor:'red'
-              
-            },
-          ],
-        },
-        options:{
-            title:{
-                display:true,
-                text:"Total Active Cases",
-                fontSize:25
-            }
-            ,
-            legend:{
-                position:'right',
-                labels:{
-                    fontColor:'#777'
-                }
-            }
-        }
-      });
+         type: "bar",
+         data: {
+           labels: [...datearray],
+           datasets: [
+             {
+               label: "Cases Per day",
+               data: [...activecasesarray],
+               
+               backgroundColor:"yellow"
+             },
+           ],
+         },
+         options: {
+           title: {
+             display: true,
+             text: "Total Active Cases",
+             fontSize: 25,
+           },
+           legend: {
+             position: "right",
+             labels: {
+               fontColor: "#777",
+             },
+           },
+         },
+       });
   }
 
   function makinglinearchart(array){
@@ -107,7 +107,8 @@
               {
                 label: "Cases Per day",
                 data: [...deathsarray],
-                backgroundColor:'purple'
+             
+                backgroundColor: "rgba(255,99, 132, 0.2)"
               },
             ],
           },
@@ -120,7 +121,7 @@
             legend: {
               position: "left",
               labels: {
-                fontColor: "#777"
+                fontColor: "#777",
               },
             },
           },
@@ -149,6 +150,7 @@
           {
             label: "Cases Per day",
             data: [...recoveredcasesarray],
+            fill: false,
             backgroundColor: "green",
           },
         ],
