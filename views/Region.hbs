@@ -31,6 +31,33 @@
             margin: 0;
             padding: 0;
         }
+          .blinking {
+            animation: blinkingText 1.2s infinite;
+        }
+
+        @keyframes blinkingText {
+            0% {
+                color: red;
+            }
+
+            49% {
+                color: green;
+
+            }
+
+            60% {
+                color: transparent;
+            }
+
+            99% {
+                color: transparent;
+            }
+
+            100% {
+                color: yellow;
+
+            }
+        }
 
         #head:hover {
             transform: scale(1.2);
@@ -49,7 +76,7 @@
 
 
         <div>
-            <img src="corona.jpg" class="img">
+            <img src="images/corona.jpg" class="img">
         </div>
         <ul class="navbar-nav mx-auto ">
 
@@ -81,7 +108,7 @@
     <div class="row">
         <div class="col-sm-12" style="background-color: burlywood;margin-top:50px;">
             <h1 class="display-2" style="color: indigo;text-align:center;">
-                <b>CORONA CASES</b>
+                <b>CORONA STATISTICS BASED ON <span  class="blinking">COUNTRY</span></b>
             </h1>
         </div>
 
@@ -123,7 +150,7 @@
             </div>
         </div>
         <div class="card " style="margin-left:100px;margin-top:50px;width:20rem;height:fit-content">
-            <img src="corona.jpg" class="card-img-top" alt="corona img" style="width: 318px;">
+            <img src="images/corona.jpg" class="card-img-top" alt="corona img" style="width: 318px;">
             <div class="card-body">
 
                 <h1 class="card-text " style="text-align: center;">Recovered</h1>
@@ -134,7 +161,7 @@
 
     </div>
 
-    <div class="container" style="margin-top: 100px;background-color:white;">
+    <div class="container" style="margin-top: 100px;background-color:#00ffff;">
         <canvas id="activecaseschart"></canvas>
     </div>
     <div class="container" style="margin-top: 100px;background-color:white;">

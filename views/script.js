@@ -1,48 +1,39 @@
   
+ 
   function doingrequest(){
-      const axios = require("axios");
+       $.get("https://pomber.github.io/covid19/timeseries.json", (data) => {
+         console.log(data);
+         let countryname =document.getElementById('inp').value;
+         let countryarray = data[countryname];
+         console.log(countryarray);
 
-      axios
-        .get("https://pomber.github.io/covid19/timeseries.json")
+         let date = countryarray[countryarray.length - 1].date;
+         let confirmed = countryarray[countryarray.length - 1].confirmed;
+         let deaths = countryarray[countryarray.length - 1].deaths;
+         let recovered = countryarray[countryarray.length - 1].recovered;
 
-        .then((response) => {
-          let countrynameval = $("#inp").val();
+        //  console.log(date);
+        //  console.log(confirmed);
+        //  console.log(deaths);
+        //  console.log(recovered);
 
-          let countryname = countrynameval;
+         let conname = document.getElementById("countryname");
+         conname.innerText = countryname.toUpperCase();
 
-          let countryarray = response.data[countryname];
-          let confirmed = countryarray[countryarray.length - 1].confirmed;
-          let deaths = countryarray[countryarray.length - 1].deaths;
-          let recovered = countryarray[countryarray.length - 1].recovered;
-        //   console.log(
-        //     "confirmed: " +
-        //       confirmed +
-        //       " deaths: " +
-        //       deaths +
-        //       " recovered:" +
-        //       recovered
-        //   );
-        let conname =document.getElementById('countryname')
-        conname.innerText=countrynameval;
+         let activecases = document.getElementById("active");
+         activecases.innerText = confirmed;
 
-        let activecases=document.getElementById('active')
-        activecases.innerText=confirmed;
+         let death = document.getElementById("death");
+         death.innerText = deaths;
 
-        let death=document.getElementById('death')
-        death.innerText=deaths;
+         let recovery = document.getElementById("recovery");
+         recovery.innerText = recovered;
 
-        let recovery=document.getElementById('recovery')
-        recovery.innerText=recovered;
-
-        makingbarchart(countryarray);
-        makinglinearchart(countryarray);
-        makingbarchartforrecovery(countryarray);
-
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-
+         makingbarchart(countryarray);
+         makinglinearchart(countryarray);
+         makingbarchartforrecovery(countryarray);
+       });
+        
 
   }
 
@@ -69,6 +60,7 @@
             {
               label: "Cases Per day",
               data: [...activecasesarray],
+              backgroundColor:'red'
               
             },
           ],
@@ -102,6 +94,7 @@
       }
 
       let chart = document.getElementById("deathcaseschart").getContext('2d');
+
       Chart.defaults.global.defaultFontColor="red";
         let dead = new Chart(chart, {
           type: "line",
@@ -111,6 +104,7 @@
               {
                 label: "Cases Per day",
                 data: [...deathsarray],
+                backgroundColor:'purple'
               },
             ],
           },
@@ -123,7 +117,7 @@
             legend: {
               position: "left",
               labels: {
-                fontColor: "#777",
+                fontColor: "#777"
               },
             },
           },
@@ -142,7 +136,7 @@
     }
 
     let chart = document.getElementById("recoveredcaseschart").getContext("2d");
-    Chart.defaults.global.defaultFontColor = "green";
+    Chart.defaults.global.defaultFontColor = "blue";
 
     let active = new Chart(chart, {
       type: "horizontalBar",
@@ -152,6 +146,7 @@
           {
             label: "Cases Per day",
             data: [...recoveredcasesarray],
+            backgroundColor: "green",
           },
         ],
       },
