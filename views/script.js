@@ -2,8 +2,11 @@
  
   function doingrequest(){
        $.get("https://pomber.github.io/covid19/timeseries.json", (data) => {
-         console.log(data);
+        //  console.log(data);
          let countryname =document.getElementById('inp').value;
+         if(countryname.charAt(0)!==countryname.charAt(0).toUpperCase()){
+           alert('First letter of your country name should be capital')
+         }
          let countryarray = data[countryname];
          console.log(countryarray);
 
