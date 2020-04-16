@@ -1,6 +1,8 @@
 const express =require('express')
 const app =express()
 
+const server_port =process.env.PORT||5555;
+
 
 app.set('view engine','hbs')
 
@@ -28,6 +30,6 @@ app.get("/region", (req, res) => {
 
 
 
-app.listen(5555,()=>{
+app.listen(server_port,()=>{
     console.log('server has started');
 })
